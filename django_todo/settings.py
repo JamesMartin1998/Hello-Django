@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 if os.path.isfile('env.py'):
     import env
+
+import dj_database_url
+
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -77,13 +80,16 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
+DATABASES = {
+    'default': dj_database_url.parse('postgres://igqqhthhfwniwz:58b5f54a9ffb1e26dc1754092450ff30b0013e7d7ffc832f2e1d924f975de0c7@ec2-34-241-90-235.eu-west-1.compute.amazonaws.com:5432/dbfcmlhcp56bud')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
