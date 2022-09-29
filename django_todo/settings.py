@@ -36,7 +36,7 @@ DEBUG = development
 if development:
     ALLOWED_HOSTS = ['localhost']
 else:
-    ALLOWED_HOSTS = ['HEROKU_HOSTNAME']
+    ALLOWED_HOSTS = ['jfonei-django-todo-app.herokuapp.com']
 
 
 # Application definition
