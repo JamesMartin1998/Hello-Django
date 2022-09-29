@@ -31,9 +31,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = developent
+DEBUG = development
 
-ALLOWED_HOSTS = ['jfonei-django-todo-app.herokuapp.com']
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = ['HEROKU_HOSTNAME']
 
 
 # Application definition
