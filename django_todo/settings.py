@@ -17,7 +17,7 @@ if os.path.isfile('env.py'):
 
 import dj_database_url
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 development = os.environ.get('DEVELOPMENT', False)
 
